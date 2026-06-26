@@ -1,16 +1,64 @@
-# React + Vite
+# Prabavathi - The South Indian Model Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **The Embodiment of South Indian Elegance**
 
-Currently, two official plugins are available:
+A premium, interactive, and fully responsive modeling portfolio website showcasing the grace, beauty, and heritage of South Indian fashion. Built with React, Vite, Tailwind CSS, and Framer Motion.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Live Repository: [https://github.com/Kubendiran2003/The_South_Indian_Model](https://github.com/Kubendiran2003/The_South_Indian_Model)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **📱 Full Viewport Responsiveness:** Optimized grid structures and fluid container spacing for seamless presentation on mobile (390px), tablet (768px), and desktop screen sizes.
+- **✨ Cinematic Animations & Micro-interactions:**
+  - Dynamic scroll progress bar tracking.
+  - Interactive cursor trailing with lagging sparkles.
+  - Spotlight glares on cards that follow mouse pointer coordinates.
+- **🎥 Reels & Video Integration:** Native HTML5 video player with customized controls and hover play overlays, showcasing local high-definition modeling reels.
+- **📷 Curated Image Galleries:** Categorized portfolio with filters, interactive slide-through lightboxes, and smooth spring-based transitions.
+- **💼 Interactive Booking Form:** Dynamic client inquiries page for brand collaborations, bridal campaigns, and sponsorship opportunities.
+- **🔗 Social Links:** Integrated Instagram feeds and direct links.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Technology Stack
+
+- **Framework:** [React.js](https://react.dev/)
+- **Build System:** [Vite](https://vite.dev/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Kubendiran2003/The_South_Indian_Model.git
+   cd The_South_Indian_Model
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server locally:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+   The compiled assets will be located in the `dist` directory.
