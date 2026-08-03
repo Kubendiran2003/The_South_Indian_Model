@@ -127,8 +127,8 @@ const About = () => {
               <motion.img
                 src={fullimage}
                 alt="About"
-                style={{ y: imgY, scale: 1.15 }}
-                className="w-full h-[600px] object-cover object-top rounded-lg shadow-luxury"
+                style={{ y: imgY, scale: 1.05 }}
+                className="w-full h-[550px] object-cover object-center rounded-lg shadow-luxury"
               />
             </div>
             {/* Decorative Frame */}
