@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { FiChevronDown } from 'react-icons/fi';
 import siteConfig from '../data/siteConfig';
 import herobg from '../assets/hero-bride.jpg';
@@ -21,24 +21,6 @@ const Hero = () => {
   const bgScale = useTransform(scrollY, [0, 1000], [1, 1.15]);
   const textY = useTransform(scrollY, [0, 1000], [0, 150]);
   const textOpacity = useTransform(scrollY, [0, 600], [1, 0]);
-
-  // Spotlight pointer tracking
-  const spotlightX = useMotionValue(0);
-  const spotlightY = useMotionValue(0);
-  
-  const spotlightXSpring = useSpring(spotlightX, { stiffness: 100, damping: 25 });
-  const spotlightYSpring = useSpring(spotlightY, { stiffness: 100, damping: 25 });
-  
-  const spotlightBg = useTransform(
-    [spotlightXSpring, spotlightYSpring],
-    ([x, y]) => `radial-gradient(700px circle at ${x}px ${y}px, rgba(212, 175, 55, 0.18), transparent 80%)`
-  );
-
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    spotlightX.set(e.clientX - rect.left);
-    spotlightY.set(e.clientY - rect.top);
-  };
 
   // Generate static positions for particles on mount to avoid hydration mismatch
   const [particles, setParticles] = useState([]);
@@ -90,7 +72,6 @@ const Hero = () => {
   return (
     <section
       id="home"
-      onMouseMove={handleMouseMove}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-maroon-950"
     >
       {/* Parallax Background Image with Overlays */}
@@ -106,12 +87,6 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-maroon-900/60 via-maroon-950/70 to-maroon-950" />
         <div className="absolute inset-0 bg-gradient-to-r from-maroon-950/50 via-transparent to-maroon-950/50" />
       </motion.div>
-
-      {/* Dynamic Spotlight Layer */}
-      <motion.div 
-        className="absolute inset-0 z-1 pointer-events-none mix-blend-screen"
-        style={{ background: spotlightBg }}
-      />
 
       {/* Floating Sparkles/Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-1">
