@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { FiChevronDown } from 'react-icons/fi';
 import siteConfig from '../data/siteConfig';
-import herobg from '../assets/hero-bride.jpg';
+import herobg from '../assets/hero-bride_full.jpg';
 import { useEffect, useState } from 'react';
 
 const Hero = () => {
