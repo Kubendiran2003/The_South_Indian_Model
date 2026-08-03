@@ -130,37 +130,6 @@ const Services = () => {
             <ServiceCard key={service.id} service={service} index={index} listInView={isInView} />
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-20 text-center"
-        >
-          <div className="w-full max-w-2xl mx-auto block glass-card-dark px-6 md:px-24 py-8 rounded-lg border border-gold-400/25 relative overflow-hidden shadow-luxury">
-            <div className="absolute -top-12 -left-12 w-24 h-24 bg-gold-400/10 rounded-full blur-xl" />
-            <div className="absolute -bottom-12 -right-12 w-24 h-24 bg-maroon-600/20 rounded-full blur-xl" />
-            
-            <p className="text-ivory-200 text-sm mb-3 uppercase tracking-wider relative z-10">
-              Looking for something specific?
-            </p>
-            <h3 className="font-display text-2xl md:text-3xl text-white mb-6 relative z-10">
-              Let's Discuss Your Vision
-            </h3>
-            <button
-              onClick={() => {
-                const element = document.getElementById('booking');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="btn-gold px-6 md:px-10 py-3.5 md:py-4 cursor-pointer relative z-10"
-            >
-              Book a Consultation
-            </button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

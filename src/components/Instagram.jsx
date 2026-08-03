@@ -3,12 +3,12 @@ import { motion, useInView } from 'framer-motion';
 import { FiInstagram } from 'react-icons/fi';
 import siteConfig from '../data/siteConfig';
 
-import imgBridalElegance from '../assets/portfolio-bridal-elegance.png';
-import imgGoldenSaree from '../assets/portfolio-golden-saree.png';
-import imgTempleJewelry from '../assets/portfolio-temple-jewelry.png';
-import imgClassicTraditional from '../assets/portfolio-classic-traditional.png';
-import imgModernFusion from '../assets/portfolio-modern-fusion.png';
-import imgRoyalBridal from '../assets/portfolio-royal-bridal.png';
+import imgBridalElegance from '../assets/portfolio-bridal-elegance.jpg';
+import imgGoldenSaree from '../assets/portfolio-golden-saree.jpg';
+import imgTempleJewelry from '../assets/portfolio-temple-jewelry.jpg';
+import imgClassicTraditional from '../assets/portfolio-classic-traditional.jpg';
+import imgModernFusion from '../assets/portfolio-modern-fusion.jpg';
+import imgRoyalBridal from '../assets/portfolio-royal-bridal.jpg';
 
 const instagramPosts = [
   {
@@ -49,7 +49,7 @@ const Instagram = () => {
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
   return (
-    <section className="section-padding bg-ivory-100">
+    <section className="section-padding bg-white">
       <div ref={sectionRef} className="container-padding max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -84,6 +84,8 @@ const Instagram = () => {
               <img
                 src={post.image}
                 alt="Instagram post"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
 

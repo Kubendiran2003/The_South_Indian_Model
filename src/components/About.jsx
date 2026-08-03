@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { FiCamera, FiVideo, FiUsers, FiHeart } from 'react-icons/fi';
 import siteConfig from '../data/siteConfig';
-import fullimage from '../assets/hero-bride.jpg';
+import fullimage from '../assets/hero-bride1.jpg';
 
 const stats = [
   { label: 'Photoshoots', value: siteConfig.stats.photoshoots, icon: FiCamera },

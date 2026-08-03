@@ -15,7 +15,9 @@ const Contact = () => {
       value: siteConfig.contact.mobile,
       href: `tel:${siteConfig.contact.mobile}`,
       buttonText: "Call Now",
-      buttonClass: "btn-primary"
+      buttonClass: "btn-secondary",
+      iconColor: "text-gold-500",
+      bgColor: "bg-gold-400/10"
     },
     {
       icon: FaWhatsapp,
@@ -23,7 +25,9 @@ const Contact = () => {
       value: siteConfig.contact.whatsapp,
       href: `https://wa.me/${siteConfig.contact.whatsapp.replace(/\D/g, '')}`,
       buttonText: "Message on WhatsApp",
-      buttonClass: "btn-gold"
+      buttonClass: "btn-secondary",
+      iconColor: "text-gold-500",
+      bgColor: "bg-gold-400/10"
     },
     {
       icon: FiMail,
@@ -31,27 +35,24 @@ const Contact = () => {
       value: siteConfig.contact.email,
       href: `mailto:${siteConfig.contact.email}`,
       buttonText: "Send Email",
-      buttonClass: "btn-secondary"
-    }
-  ];
-
-  const socialLinks = [
+      buttonClass: "btn-secondary",
+      iconColor: "text-gold-500",
+      bgColor: "bg-gold-400/10"
+    },
     {
       icon: FaInstagram,
       label: "Instagram",
+      value: siteConfig.contact.instagramHandle,
       href: siteConfig.contact.instagram,
-      color: "hover:bg-pink-600"
-    },
-    {
-      icon: FaYoutube,
-      label: "YouTube",
-      href: siteConfig.contact.youtube,
-      color: "hover:bg-red-600"
+      buttonText: "Follow on Instagram",
+      buttonClass: "btn-secondary",
+      iconColor: "text-gold-500",
+      bgColor: "bg-gold-400/10"
     }
   ];
-
+  
   return (
-    <section id="contact" className="section-padding bg-white">
+    <section id="contact" className="section-padding bg-ivory-100">
       <div ref={sectionRef} className="container-padding max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -68,88 +69,33 @@ const Contact = () => {
         </motion.div>
 
         {/* Contact Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {contactItems.map((item, index) => (
             <motion.div
               key={item.label}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="glass-card p-8 text-center hover-lift"
+              className="glass-card p-6 text-center hover-lift flex flex-col justify-between min-h-[220px]"
             >
-              <div className="w-16 h-16 rounded-full bg-gold-400/10 flex items-center justify-center mx-auto mb-6">
-                <item.icon className="text-gold-500 text-2xl" />
+              <div>
+                <div className={`w-12 h-12 rounded-full ${item.bgColor} flex items-center justify-center mx-auto mb-4 transition-colors duration-300 group-hover:bg-transparent`}>
+                  <item.icon className={`${item.iconColor} text-xl`} />
+                </div>
+                <p className="text-xs text-gold-500 uppercase tracking-wider mb-1.5">{item.label}</p>
+                <p className="font-display text-base text-maroon-600 mb-5 break-all">{item.value}</p>
               </div>
-              <p className="text-sm text-gold-500 uppercase tracking-wider mb-2">{item.label}</p>
-              <p className="font-display text-lg text-maroon-600 mb-6 break-all">{item.value}</p>
               <a
                 href={item.href}
                 target={item.href.startsWith('https') ? '_blank' : undefined}
                 rel={item.href.startsWith('https') ? 'noopener noreferrer' : undefined}
-                className={`${item.buttonClass} inline-block text-sm`}
+                className={`${item.buttonClass} inline-block text-xs py-2.5 px-4 w-full`}
               >
                 {item.buttonText}
               </a>
             </motion.div>
           ))}
         </div>
-
-        {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mb-12"
-        >
-          <p className="text-sm text-maroon-500 mb-4">Follow on Social Media</p>
-          <div className="flex justify-center gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-14 h-14 rounded-full bg-maroon-600 ${social.color} text-white flex items-center justify-center transition-colors duration-300`}
-              >
-                <social.icon className="text-xl" />
-              </a>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Big CTA Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <div className="glass-card-dark px-6 py-10 md:p-12 text-center relative overflow-hidden">
-            {/* Decorative Elements */}
-            <div className="absolute -top-20 -right-20 w-40 h-40 border border-gold-400/20 rounded-full" />
-            <div className="absolute -bottom-20 -left-20 w-60 h-60 border border-gold-400/20 rounded-full" />
-
-            <div className="relative z-10">
-              <FiMessageCircle className="text-gold-400 text-4xl mx-auto mb-6" />
-              <h3 className="font-display text-2xl md:text-3xl text-white mb-4">
-                Let's Create Something Beautiful Together
-              </h3>
-              <p className="text-ivory-200 max-w-2xl mx-auto mb-8">
-                Whether you're planning a bridal shoot, jewelry promotion, or brand collaboration, I'd love to hear your vision and bring it to life.
-              </p>
-              <button
-                onClick={() => {
-                  const element = document.getElementById('booking');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="btn-gold"
-              >
-                Start a Conversation
-              </button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

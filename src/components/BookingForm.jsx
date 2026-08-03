@@ -232,11 +232,12 @@ const BookingForm = () => {
                     className={selectClasses}
                   >
                     <option value="">Select budget range</option>
-                    <option value="Under INR 50,000">Under INR 50,000</option>
-                    <option value="INR 50,000 - 1,00,000">INR 50,000 - 1,00,000</option>
-                    <option value="INR 1,00,000 - 2,00,000">INR 1,00,000 - 2,00,000</option>
-                    <option value="INR 2,00,000 - 5,00,000">INR 2,00,000 - 5,00,000</option>
-                    <option value="Above INR 5,00,000">Above INR 5,00,000</option>
+                    <option value="Free Collaboration">Free Collaboration</option>
+                    <option value="Under INR 3,000">Under INR 3,000</option>
+                    <option value="INR 3,000 - 5,000">INR 3,000 - 5,000</option>
+                    <option value="INR 5,000 - 10,000">INR 5,000 - 10,000</option>
+                    <option value="INR 10,000 - 15,000">INR 10,000 - 15,000</option>
+                    <option value="Above INR 15,000">Above INR 15,000</option>
                   </select>
                 </div>
               </div>

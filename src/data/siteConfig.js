@@ -8,7 +8,7 @@ export const siteConfig = {
     mobile: "+91 93634 72231",
     whatsapp: "+91 93634 72231",
     email: "sivaprabavathi07@gmail.com",
-    instagram: "https://instagram.com/prabavathimodel",
+    instagram: "https://www.instagram.com/the.southindianmodel",
     youtube: "https://youtube.com/@prabavathimodel",
     instagramHandle: "@the.southindianmodel"
   },

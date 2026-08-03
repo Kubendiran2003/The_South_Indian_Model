@@ -4,7 +4,7 @@ import { FiX, FiZoomIn, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import portfolioData, { categories } from '../data/portfolioData';
 
 // Reusable Portfolio Item component with Local Spotlight tracking
-const PortfolioCard = ({ item, index, onOpen }) => {
+const PortfolioCard = ({ item, isVisible, onOpen }) => {
   const cardRef = useRef(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [hovering, setHovering] = useState(false);
@@ -25,11 +25,31 @@ const PortfolioCard = ({ item, index, onOpen }) => {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
-      layout
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      animate={isVisible ? "show" : "hidden"}
+      variants={{
+        show: {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          display: "block",
+          transition: {
+            duration: 0.45,
+            ease: [0.16, 1, 0.3, 1]
+          }
+        },
+        hidden: {
+          opacity: 0,
+          scale: 0.96,
+          y: 15,
+          transitionEnd: {
+            display: "none"
+          },
+          transition: {
+            duration: 0.35,
+            ease: [0.16, 1, 0.3, 1]
+          }
+        }
+      }}
       className="group relative overflow-hidden rounded-lg cursor-pointer hover-lift border border-ivory-200 bg-white shadow-sm"
       onClick={() => onOpen(item)}
     >
@@ -46,6 +66,8 @@ const PortfolioCard = ({ item, index, onOpen }) => {
         <img
           src={item.image}
           alt={item.title}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover transition-transform duration-700 ease-[0.16, 1, 0.3, 1] group-hover:scale-110"
         />
       </div>
@@ -140,21 +162,21 @@ const Portfolio = () => {
         </motion.div>
 
         {/* Portfolio Grid */}
-        <motion.div
-          layout
+        <div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
-          <AnimatePresence mode="popLayout">
-            {filteredPortfolio.map((item, index) => (
+          {portfolioData.map((item) => {
+            const isVisible = activeCategory === 'all' || item.category === activeCategory;
+            return (
               <PortfolioCard
                 key={item.id}
                 item={item}
-                index={index}
+                isVisible={isVisible}
                 onOpen={openLightbox}
               />
-            ))}
-          </AnimatePresence>
-        </motion.div>
+            );
+          })}
+        </div>
       </div>
 
       {/* Lightbox Modal */}

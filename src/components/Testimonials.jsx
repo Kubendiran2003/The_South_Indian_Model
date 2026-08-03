@@ -63,7 +63,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="section-padding bg-white overflow-hidden">
+    <section id="testimonials" className="section-padding bg-white overflow-hidden">
       <div ref={sectionRef} className="container-padding max-w-7xl mx-auto">
         {/* Header */}
         <motion.div

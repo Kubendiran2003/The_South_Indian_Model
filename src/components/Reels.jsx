@@ -65,6 +65,8 @@ const ReelCard = ({ video, index, isInView, onOpen }) => {
         <img
           src={video.thumbnail}
           alt={video.title}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover transition-transform duration-700 ease-[0.16, 1, 0.3, 1] group-hover:scale-105"
         />
 
@@ -188,10 +190,10 @@ const Reels = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-              className="max-w-3xl w-full relative z-0"
+              className="max-w-[380px] w-full relative z-0"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="aspect-[9/16] sm:aspect-video bg-maroon-900 rounded-lg overflow-hidden relative shadow-gold border border-gold-400/20">
+              <div className="aspect-[9/16] bg-maroon-900 rounded-lg overflow-hidden relative shadow-gold border border-gold-400/20">
                 <video
                   ref={videoRef}
                   src={selectedVideo.video}
@@ -224,10 +226,6 @@ const Reels = () => {
                   </div>
                 )}
               </div>
-
-              <p className="text-center text-ivory-300 mt-4 text-xs font-light uppercase tracking-widest">
-                Click Video or Play Button to play/pause.
-              </p>
             </motion.div>
           </motion.div>
         )}

@@ -1,15 +1,15 @@
-import imgBridalElegance from '../assets/portfolio-bridal-elegance.png';
-import imgGoldenSaree from '../assets/portfolio-golden-saree.png';
-import imgTempleJewelry from '../assets/portfolio-temple-jewelry.png';
-import imgClassicTraditional from '../assets/portfolio-classic-traditional.png';
-import imgModernFusion from '../assets/portfolio-modern-fusion.png';
-import imgRoyalBridal from '../assets/portfolio-royal-bridal.png';
-import imgSilkSplendor from '../assets/portfolio-silk-splendor.png';
-import imgGoldAdornments from '../assets/portfolio-gold-adornments.png';
-import imgHeritageStyle from '../assets/portfolio-heritage-style.png';
-import imgContemporaryGrace from '../assets/portfolio-contemporary-grace.png';
-import imgBridalPortrait from '../assets/portfolio-bridal-portrait.png';
-import imgStatementPieces from '../assets/portfolio-statement-pieces.png';
+import imgBridalElegance from '../assets/portfolio-bridal-elegance.jpg';
+import imgGoldenSaree from '../assets/portfolio-golden-saree.jpg';
+import imgTempleJewelry from '../assets/portfolio-temple-jewelry.jpg';
+import imgClassicTraditional from '../assets/portfolio-classic-traditional.jpg';
+import imgModernFusion from '../assets/portfolio-modern-fusion.jpg';
+import imgRoyalBridal from '../assets/portfolio-royal-bridal.jpg';
+import imgSilkSplendor from '../assets/portfolio-silk-splendor.jpg';
+import imgGoldAdornments from '../assets/portfolio-gold-adornments.jpg';
+import imgHeritageStyle from '../assets/portfolio-heritage-style.jpg';
+import imgContemporaryGrace from '../assets/portfolio-contemporary-grace.jpg';
+import imgBridalPortrait from '../assets/portfolio-bridal-portrait.jpg';
+import imgStatementPieces from '../assets/portfolio-statement-pieces.jpg';
 
 const portfolioData = [
   {
